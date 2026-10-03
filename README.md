@@ -2,7 +2,7 @@
 
 A sleek, minimalist, and responsive web-based typing speed test built with HTML5, CSS3, and Vanilla JavaScript. Designed for high accuracy, smooth feedback, and zero ad distractions.
 
-🚀 **Live Demo:** [https://YOUR-USERNAME.github.io/thoufiq-typing-test/](https://Mohamed-Thoufiq-M.github.io/thoufiq-typing-test/)
+🚀 **Live Demo:** (https://Mohamed-Thoufiq-M.github.io/thoufiq-typing-test/)
 
 ---
 
