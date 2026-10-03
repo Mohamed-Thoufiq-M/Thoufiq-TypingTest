@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Test — Apex Speed Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Ambient background glow elements -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+
+  <div class="glass-card container">
+    <!-- Header with Branding & Controls -->
+    <header>
+      <div class="logo">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand-title">TYPING TEST</span>
+          <span class="brand-sub">SPEED LAB</span>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <div class="custom-select-wrapper">
+          <select id="theme-select">
+            <option value="dark">Cyber Glass</option>
+            <option value="neon">Neon Matrix</option>
+            <option value="cyberpunk">Synthwave</option>
+          </select>
+        </div>
+        <button id="sound-btn" class="icon-btn active" title="Toggle Audio Feedback">
+          <span class="btn-icon">🔊</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Floating Navigation & Mode Control Bar -->
+    <nav class="control-bar">
+      <div class="mode-group segment-control">
+        <button class="mode-btn active" data-mode="time">time</button>
+        <button class="mode-btn" data-mode="words">words</button>
+        <button class="mode-btn" data-mode="zen">zen</button>
+      </div>
+      
+      <div class="divider"></div>
+
+      <!-- Time Options -->
+      <div id="time-options" class="option-group segment-control">
+        <button class="opt-btn" data-val="15">15s</button>
+        <button class="opt-btn active" data-val="30">30s</button>
+        <button class="opt-btn" data-val="60">60s</button>
+      </div>
+
+      <!-- Words Options -->
+      <div id="words-options" class="option-group segment-control hidden">
+        <button class="opt-btn" data-val="10">10</button>
+        <button class="opt-btn active" data-val="25">25</button>
+        <button class="opt-btn" data-val="50">50</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Game Mode Badges -->
+      <div class="toggle-group">
+        <button id="toggle-sudden-death" class="toggle-btn" title="End test on first mistake">Sudden Death</button>
+        <button id="toggle-blind" class="toggle-btn" title="Hide key feedback">Blind</button>
+      </div>
+    </nav>
+
+    <!-- Live Counter -->
+    <div class="stats-live">
+      <div id="live-display">30</div>
+    </div>
+
+    <!-- Typing Display Arena -->
+    <div id="words-wrapper" class="typing-arena">
+      <div id="caret"></div>
+      <div id="words"></div>
+    </div>
+
+    <!-- Hidden Keystroke Listener -->
+    <input type="text" id="hidden-input" autofocus autocomplete="off" capitalize="off">
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+      <button id="restart-btn" class="primary-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+        <span>Restart Test</span>
+      </button>
+    </div>
+
+    <!-- Results Display -->
+    <div id="results" class="hidden">
+      <div class="stats-summary">
+        <div class="stat-card">
+          <span class="label">wpm</span>
+          <span id="res-wpm" class="value">0</span>
+        </div>
+        <div class="stat-card">
+          <span class="label">accuracy</span>
+          <span id="res-acc" class="value">0%</span>
+        </div>
+        <div class="stat-card">
+          <span class="label">raw wpm</span>
+          <span id="res-raw" class="value">0</span>
+        </div>
+      </div>
+      <div class="chart-container">
+        <canvas id="wpm-chart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
